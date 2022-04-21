@@ -1,0 +1,35 @@
+<div class="d-flex align-center time-box">
+	<div class="btn-time time-sub">-5分</div>
+	<input type="time" id="test" value="08:00" />
+	<div class="btn-time time-add">+5分</div>
+</div>
+
+<script type="text/javascript">
+	// 時間調節の関数
+	function timeControl(timeText, value) {
+		const dt = new Date();
+		dt.setHours(timeText.slice(0, 2));
+		dt.setMinutes(timeText.slice(-2));
+		dt.setMinutes(dt.getMinutes() + value);
+		const newTime =
+			dt.getHours().toString().padStart(2, "0") +
+			":" +
+			dt.getMinutes().toString().padStart(2, "0");
+		return newTime;
+	}
+
+	// -5分
+	$(".btn-time.time-sub").on("click", function () {
+		let timeText = $(this).parents(".time-box").find("input").val();
+		$(this).parents(".time-box").find("input").val(timeControl(timeText, -5));
+	});
+
+	// +5分
+	$(".btn-time.time-add").on("click", function () {
+		let timeText = $(this).parents(".time-box").find("input").val();
+		$(this)
+			.parents(".time-box")
+			.find("input")
+			.val(timeControl(timeText, +5));
+	});
+</script>

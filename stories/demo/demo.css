@@ -1,0 +1,32 @@
+.time-box > div {
+	margin: 0 10px;
+}
+.d-flex {
+	display: flex;
+}
+.align-center {
+	display: flex;
+	align-items: center;
+}
+
+.btn-time {
+	color: black;
+	cursor: pointer;
+	padding: 4px;
+	border-radius: 4px;
+	background: #efefef;
+	box-shadow: 0px 2px 1px #00000029;
+	user-select: none;
+}
+
+.time-box > input {
+	color: #434343;
+	border: 1px solid #666666;
+	margin: 0 8px;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 4px;
+	border-radius: 8px;
+	text-align: center;
+	width: 100px;
+}
